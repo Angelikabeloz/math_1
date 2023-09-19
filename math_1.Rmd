@@ -1,0 +1,96 @@
+---
+title: "math_1"
+output: html_document
+date: "2023-09-19"
+---
+
+```{r setup, include=FALSE}
+a <- c(1)
+a
+```
+
+```{r}
+b <- rep(NA, 5)
+length(b)
+```
+```{r}
+df <- data.frame(matrix(ncol = 2, nrow = 0))
+colnames(df) <- c('x', 'y')
+df < 0:5
+str(df)
+```
+
+```{r setup, include=FALSE}
+my_df <- data.frame(id = "x", "y", x = [length = 5Ъ, y = 1:5)
+my_df
+```
+```{r}
+vector_1 <- c( 1, 2, 3, 6, 5)
+vector_1
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+nums <- c(1, 6, 7, 8, 9)
+nums [2]
+nums [c(2, 3)]
+nums [-1]
+table(nums>5)
+prop.table(table(nums>5))
+```
+```{r}
+factorial(5)
+choose(5,4)
+sample(6,5, replace = TRUE)
+sample(6,5, replace = FALSE)
+sample(c(1, 2, 3, 4, 5, 6), 5, replace = FALSE)
+die <- 1:6
+sample(x = die, size = 1, replace = FALSE)
+sample(x = die, size = 2, replace = FALSE)
+sample(x = die, size = 1, prob = NULL)
+set.seed(125)
+sample(c(1, 2, 3, 4, 5, 6), 5, replace = FALSE)
+sample(c(1, 2, 3, 4, 5, 6), 5, replace = TRUE)
+```
+```{bash}
+```
+
+4. We will now learn how to run a simulation. Recall the birthday problem from class. We will simulate this to see if the mathematical result we showed in class holds up.
+a. Set a seed for reproducibility.
+b. Start by creating one simulated class of 35 people. We will need a vector of randomly sampled birthdays. Assume that all birthdays occur with equal probability and assume away leap years. You can just label the days of the year from 1 to 365.
+c. Are there any repeat birthdays in your class? What are they?
+d. Now we will walk step by step through running a simulation. In this simulation, we will randomly generate 100,000 fake classes and compute the average probability of having more than one of the same birthday in a class (the frequentist interpretation of probability). First, generate an empty vector called match of length 100,000 to hold our results.
+e. Write a loop that generates a fake class and saves the number of repeated birthdays in that class into your empty vector.
+f. Summarize that output vector: what proportion of simulated classes have matching birthdays?
+g. Let’s compare our simulated result to the mathematical result from class (see slide 30). Compute the probability of matching birthdays using the formula we derived. (Note: the prod function may be helpful here.)
+```{r}
+set.seed
+class_1 <- sample(365, 35, replace = TRUE)
+length(unique(class_1))
+duplicated(class_1)
+sum(duplicated(class_1))
+class[duplicated(class_1)]
+n <- 100000
+match <- rep(NA, n)
+head(match)
+for (i in 1:n) {
+  class_1 <- sample(365, 35, replace = TRUE)
+  match[i] <- sum(duplicated(class_1)) 
+}
+prop.table(table(match==0))
+k <- 35
+1 - 365!*(365-k+1)/365^k
+
+
+```
+```{r}
+class sample(365, 35, replace = TRUE)
+```
+
+
+
